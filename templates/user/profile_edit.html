@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Foydalanuvchi ma'lumotlarini o'zgartirish{% endblock title %}
+
+{% block content %}
+<h1>   Foydalanuvchi ma'lumotlarini o'zgartirish   </h1>
+    <p>   Siz o'zingiz haqingizdagi ma'lumotlarni quyidagi forma orqali o'zgartirishingiz mumkin   :</p>
+
+     <form method="post" enctype="multipart/form-data">{% csrf_token %}
+     {{ form | crispy }}
+     {{ profile_form | crispy }}
+     <button class="btn btn-outline-primary" type="submit">O'zgarishlarni saqlash</button>
+     </form>
+
+{% endblock %}

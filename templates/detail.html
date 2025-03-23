@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="mb-3">
+        <a href="{% url 'home' %}" class="btn btn-outline-primary">&larr; Bosh sahifaga</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h1 class="card-title">{{ site.title }}</h1>
+
+            <p class="mt-3">
+                <strong>Sayt: </strong>
+                <a href="{{ site.site }}" class="text-decoration-none" target="_blank">
+                    {{ site.site }}
+                </a>
+            </p>
+
+            <div class="mt-3">
+                <p>{{ site.body | safe }}</p>
+            </div>
+
+            <hr>
+
+            <p class="text-muted">
+                <strong>Muallif: </strong> {{ site.user }}
+            </p>
+            <div class="text-center mt-4">
+                <a href="{{ site.site }}" class="btn btn-success" target="_blank">
+                    Saytga o‘tish
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
